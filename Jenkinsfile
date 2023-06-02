@@ -9,6 +9,7 @@ pipeline {
         stage('Code Quality') {
             steps {
                 sh 'python3 -m pylint app.py'
+                sh 'echo "soy $USER"'
             }
         }
         stage('Tests') {
