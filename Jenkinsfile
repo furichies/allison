@@ -4,7 +4,7 @@ pipeline {
         stage('Preparación entorno') {
 	    agent {
 		node {
-		    label "principal";
+		    label "DockerServer";
       		}
    	    }
             steps {
@@ -15,7 +15,7 @@ pipeline {
         stage('Control de calidad') {
 	    agent {
 		node {
-		    label "principal";
+		    label "DockerServer";
       		}
    	    }
             steps {
@@ -26,7 +26,7 @@ pipeline {
         stage('Tests') {
 	    agent {
 		node {
-		    label "principal";
+		    label "DockerServer";
       		}
    	    }
             steps {
