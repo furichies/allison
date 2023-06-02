@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
 	    agent {
 		node {
-		    label "DockerServer";
+		    label "dd";
       		}
    	    }
             steps {
@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy') {
 	    agent {
 		node {
-		    label "DockerServer";
+		    label "dd";
       		}
    	    }
             steps {
