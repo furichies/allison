@@ -1,19 +1,19 @@
 pipeline {
-    agent { any; }
+    agent any
     stages {
-        stage('calidad Quality') {
+        stage('Quality Check') {
             steps {
-                sh 'echo checking code quality'
+                sh 'echo Checking code quality'
             }
         }
         stage('Unit Tests') {
             steps {
-                sh 'echo Testing the Applications'
+                sh 'echo Testing the application'
             }
         }
         stage('Build') {
             steps {
-                sh 'echo Creating application Package'
+                sh 'echo Creating application package'
             }
         }
         stage('Delivery') {
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo Deploying the Application'
+                sh 'echo Deploying the application'
             }
         }
     }
