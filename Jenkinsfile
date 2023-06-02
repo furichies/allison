@@ -2,33 +2,18 @@ pipeline {
     agent  any;
     stages {
         stage('Preparación entorno') {
-	    agent {
-		node {
-		    label "DockerServer";
-      		}
-   	    }
             steps {
                 sh 'python3 -m pip install -r requirements.txt'
                 sh 'echo "nombre de host $HOSTNAME y el usuario $USER"'
             }
         }
         stage('Control de calidad') {
-	    agent {
-		node {
-		    label "DockerServer";
-      		}
-   	    }
             steps {
                 sh 'python3 -m pylint app.py'
                 sh 'echo "nombre de host $HOSTNAME y el usuario $USER"'
             }
         }
         stage('Tests') {
-	    agent {
-		node {
-		    label "DockerServer";
-      		}
-   	    }
             steps {
                 sh 'python3 -m pytest'
                 sh 'echo "nombre de host $HOSTNAME y el usuario $USER"'
